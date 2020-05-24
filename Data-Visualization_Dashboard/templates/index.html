@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Project (Assignment 3)</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">   
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light nav-title">
+		Gender Difference in Working Environment from 1991 to 2018
+	</nav>
+	<div class='row page-row'>
+		<div class='col main-col'>
+			<svg id='svg-1'/>
+			<div class='row button-row'>
+				<div class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons" id='svg-1-selection'>
+					<label class="btn btn-secondary active">
+						<input type="radio" name="options" id="agriculture" checked>Agriculture
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="options" id="industry">Industry
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="options" id="service">Service
+					</label>
+				</div>
+			</div>
+			<div id='svg-1-tooltip'>
+			</div>
+		</div>
+		<div class='col main-col'>
+			<svg id='svg-2'/>
+			<div class='row button-row svg-2-button-row'>
+				<div class='col btn-group btn-group-toggle btn-group-sm svg-2-labels'>
+					<label class="btn btn-secondary svg-2-label">
+						<input type="checkbox" name="options" id="male">Male
+					</label>
+					<label class="btn btn-secondary svg-2-label">
+						<input type="checkbox" name="options" id="female">Female
+					</label>
+				</div>
+			</div>
+			<div id='svg-2-tooltip'>
+			</div>
+		</div>
+	</div>
+	<div class='row page-row'>
+		<div class='col main-col'>
+			<svg id='svg-3'/>
+			<div class='row button-row svg-3-button-row'>
+				<div class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons" id='svg-3-selection'>
+					<label class="btn btn-secondary active">
+						<input type="radio" name="options" id="male" checked>Male
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="options" id="female">Female
+					</label>
+				</div>
+				<div class='col btn-group btn-group-toggle btn-group-sm svg-3-labels'>
+					<label class="btn btn-secondary svg-3-label">
+						<input type="checkbox" name="options" id="east">East Asia & Pacific
+					</label>
+					<label class="btn btn-secondary svg-3-label">
+						<input type="checkbox" name="options" id="europe">Europe & Central Asia
+					</label>
+					<label class="btn btn-secondary svg-3-label">
+						<input type="checkbox" name="options" id="latin">Latin America & Caribbean
+					</label>
+					<label class="btn btn-secondary svg-3-label">
+						<input type="checkbox" name="options" id="middle">Middle East & North Africa
+					</label>
+					<label class="btn btn-secondary svg-3-label">
+						<input type="checkbox" name="options" id="north">North America
+					</label>
+					<label class="btn btn-secondary svg-3-label">
+						<input type="checkbox" name="options" id="south">South Asia
+					</label>
+					<label class="btn btn-secondary svg-3-label">
+						<input type="checkbox" name="options" id="sub-saharan">Sub-Saharan Africa
+					</label>
+				</div>
+			</div>
+			<div id='svg-3-tooltip'>
+			</div>
+		</div>
+		<div class='col main-col'>
+			<svg id='svg-4'/>
+			<div class='row button-row svg-4-button-row'>
+				<div class='col btn-group btn-group-toggle btn-group-sm svg-4-labels'>
+					<label class="btn btn-secondary svg-4-label">
+						<div id="high">High income</div>
+					</label>
+					<label class="btn btn-secondary svg-4-label">
+						<div id="upper">Upper middle income</div>
+					</label>
+					<label class="btn btn-secondary svg-4-label">
+						<div id="lower">Lower middle income</div>
+					</label>
+					<label class="btn btn-secondary svg-4-label">
+						<div id="low">Low income</div>
+					</label>
+				</div>
+			</div>
+			<div id='svg-4-tooltip'>
+			</div>
+		</div>
+	</div>
+	<div class='overlay'>
+		<div class='overlay-box'>
+			<svg id='svg-5' />
+			<i class="fa fa-times" id='close-btn'></i>
+		</div>
+	</div>
+
+	<script src="{{ url_for('static', filename='js/svg-1.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/svg-2.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/svg-3.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/svg-4.js') }}"></script>
+</body>
+</html>

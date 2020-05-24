@@ -1,0 +1,235 @@
+/* General */
+body {
+	padding: 0 10em;
+	padding-bottom: 3em;
+}
+
+svg {
+	height: 90%;
+	width: 100%;
+}
+
+.nav-title {
+	justify-content: center;
+	padding: 1.5em;
+	font-size: large;
+}
+
+.page-row {
+	height: 60vh;
+}
+
+.main-col {
+	padding: 1em 1em 0.5em 1em;
+	margin: 0.25em;
+	background-color: #f8f8f8
+}
+
+/*.page-row > .col {
+	border: 1px solid;
+}
+*/
+/* General */
+
+/* SVG1 */
+.button-row {
+	justify-content: center;
+}
+
+.btn-group-sm > .btn {
+	font-size: 0.7rem !important;
+}
+
+.dot {
+	opacity: 0;
+	/*transition: opacity 1s ease-in-out;*/
+	animation-name: show_dots;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes show_dots {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+#svg-1-tooltip{
+	display: none;
+	position: absolute;
+	background-color: #D3D3D3;
+	width: 9em;
+	padding: 1em;
+}
+
+/* SVG1 */
+
+
+/* SVG2 */
+#svg-2-tooltip {
+	display: none;
+	position: absolute;
+	background-color: #D3D3D3;
+	width: 12em;
+	padding: 1em;	
+	z-index: 100;
+}
+
+.svg-2-labels {
+	flex-wrap: wrap;
+	padding-right: 0;
+    justify-content: center;
+}
+
+.svg-2-label {
+	background-color: transparent;
+    color: #000;
+    border: none;
+    border-left: 5px solid;
+    border-radius: 0 !important;
+    margin: 0 1rem;
+    text-align: left;
+    max-width: 5em;
+}
+
+.svg-2-labels > .svg-2-label {
+	font-size: 0.6rem !important;
+	line-height: 1.5;
+}
+
+.svg-2-label:hover {
+	background-color: transparent;
+	color: #000000;
+}
+
+/* SVG2 */
+
+/* SVG3 */
+.svg-3-button-row {
+	padding: 0 1em;
+}
+
+.svg-3-button-row label {
+	max-height: 2.5em;
+}
+
+#svg-3-tooltip {
+	display: none;
+	position: absolute;
+	background-color: #D3D3D3;
+	width: 15em;
+	padding: 1em;	
+	z-index: 100;
+}
+
+#svg-3-selection {
+	align-self: center;
+}
+
+.svg-3-labels {
+	flex-wrap: wrap;
+	padding-right: 0;
+}
+
+.svg-3-label {
+	margin-left: 0 !important;
+	margin-right: 0.25em;
+    max-height: 1.6em;
+    min-width: 5em;
+    text-align: left;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    border-left: 3px solid;
+    border-radius: 0 !important;
+}
+
+.svg-3-labels > .svg-3-label {
+	font-size: 0.6rem !important;
+	line-height: 1.5;
+}
+
+.svg-3-label:hover {
+	background-color: transparent;
+	color: #000000;
+}
+
+/* SVG3 */
+
+/* SVG4 */
+.svg-4-button-row {
+	padding-top: 0.3rem;
+}
+
+.svg-4-label {
+    background-color: transparent;
+    color: #000;
+    border: none;
+    border-left: 5px solid;
+    border-radius: 0 !important;
+    margin: 0 1rem;
+    text-align: left;
+}
+
+.svg-4-label:hover {
+	background-color: transparent;
+	color: #000;
+	cursor: default;
+}
+
+#svg-4-tooltip {
+	display: none;
+	position: absolute;
+	background-color: #D3D3D3;
+	width: 15em;
+	padding: 1em;	
+	z-index: 100;
+}
+
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.overlay-visible {
+    display: block;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+
+.overlay-box {
+	background-color: #ffffff;
+    width: 40em;
+    height: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 1em;
+}
+/* SVG4 */
+
+/* SVG5 */
+#svg-5 {
+	height: 100%;
+}
+
+.svg-5-pie-label {
+	color: #fff;
+}
+
+i {
+    display: block;
+    position: absolute;
+    top: 0.75em;
+    right: 0.75em;
+    cursor: pointer;
+}
+/* SVG5 */
